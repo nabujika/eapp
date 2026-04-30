@@ -75,7 +75,9 @@ button {
 
 .deck-app {
   position: relative;
-  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100dvh;
   padding: 1rem;
   isolation: isolate;
 }
@@ -270,8 +272,7 @@ button {
 .deck-stage {
   position: relative;
   z-index: 1;
-  height: calc(100dvh - 12.75rem);
-  min-height: 39rem;
+  min-height: 0;
   margin-top: 1rem;
 }
 
@@ -282,6 +283,7 @@ button {
   inset: 0;
   opacity: 0;
   pointer-events: none;
+  min-height: 0;
   transform: translateX(9%) scale(0.97);
   transition:
     opacity 420ms ease,
@@ -330,8 +332,10 @@ button {
   display: grid;
   gap: 1.25rem;
   height: 100%;
+  min-height: 0;
   padding: clamp(1.25rem, 2vw, 1.8rem);
   overflow: auto;
+  overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: rgba(111, 178, 255, 0.45) transparent;
 }
@@ -1094,10 +1098,6 @@ button {
   .summary-grid {
     grid-template-columns: 1fr;
   }
-
-  .deck-stage {
-    min-height: 36rem;
-  }
 }
 
 @media (max-width: 860px) {
@@ -1123,11 +1123,6 @@ button {
     width: min(100%, 16rem);
   }
 
-  .deck-stage {
-    height: calc(100dvh - 15.75rem);
-    min-height: 30rem;
-  }
-
   .slide-shell {
     padding: 1rem;
   }
@@ -1139,11 +1134,6 @@ button {
 }
 
 @media (max-width: 620px) {
-  .deck-stage {
-    height: calc(100dvh - 17.75rem);
-    min-height: 26rem;
-  }
-
   .intro-copy h1,
   .slide-heading h2 {
     line-height: 1.02;
