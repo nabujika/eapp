@@ -685,56 +685,7 @@ function setupJumpLinks() {
 }
 
 function setupSlideAutoFit() {
-  const shells = [...document.querySelectorAll(".slide-shell")];
-  const stage = document.getElementById("deck-stage");
-  let frameId = 0;
-
-  function fitShell(shell) {
-    shell.style.setProperty("--fit-scale", "1");
-
-    if (window.innerWidth <= 900) {
-      return;
-    }
-
-    const viewport = shell.closest(".slide");
-    if (!viewport) return;
-
-    const availableWidth = Math.max(0, viewport.clientWidth - 16);
-    const availableHeight = Math.max(0, viewport.clientHeight - 16);
-    const naturalWidth = Math.ceil(shell.scrollWidth);
-    const naturalHeight = Math.ceil(shell.scrollHeight);
-
-    if (!availableWidth || !availableHeight || !naturalWidth || !naturalHeight) return;
-
-    const scale = Math.min(1, availableWidth / naturalWidth, availableHeight / naturalHeight);
-    shell.style.setProperty("--fit-scale", scale.toFixed(4));
-  }
-
-  function fitAllSlides() {
-    shells.forEach((shell) => fitShell(shell));
-  }
-
-  scheduleSlideFit = () => {
-    if (frameId) cancelAnimationFrame(frameId);
-    frameId = requestAnimationFrame(() => {
-      fitAllSlides();
-      frameId = 0;
-    });
-  };
-
-  window.addEventListener("resize", scheduleSlideFit);
-  window.addEventListener("load", scheduleSlideFit);
-
-  if (typeof ResizeObserver === "function") {
-    const observer = new ResizeObserver(() => {
-      scheduleSlideFit();
-    });
-
-    if (stage) observer.observe(stage);
-    shells.forEach((shell) => observer.observe(shell));
-  }
-
-  scheduleSlideFit();
+  scheduleSlideFit = () => {};
 }
 
 function setupSlideDeck() {
