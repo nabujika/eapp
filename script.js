@@ -2,51 +2,51 @@ const technicalData = [
   {
     label: "Kerala",
     value: 0.85,
-    color: "#47f5d1",
+    color: "#53f7d3",
     note: "Closest to the frontier in this illustrative comparison, leaving a relatively small efficiency gap.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Tamil Nadu",
     value: 0.8,
-    color: "#2ed1ba",
+    color: "#36d9c2",
     note: "Strong conversion of public inputs into service output, though still short of the frontier.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Maharashtra",
     value: 0.74,
     color: "#23bfa7",
     note: "Moderately high technical efficiency with noticeable room for process improvement.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Gujarat",
     value: 0.7,
     color: "#1ca593",
     note: "Productive, but not yet extracting the same output intensity as the frontier states.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Rajasthan",
     value: 0.64,
-    color: "#ffb067",
+    color: "#ffb15f",
     note: "Around one-third of potential output remains unrealized at the same input level.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Uttar Pradesh",
     value: 0.52,
-    color: "#ff8a52",
+    color: "#ff9356",
     note: "A wide frontier gap suggests bottlenecks in management, staffing mix, or care processes.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   },
   {
     label: "Bihar",
     value: 0.45,
-    color: "#ff6f6f",
+    color: "#ff757f",
     note: "The lowest score in the comparison, showing major headroom before reaching best-practice output.",
-    source: "Illustrative frontier benchmark"
+    source: "Illustrative state TE comparison"
   }
 ];
 
@@ -54,23 +54,23 @@ const allocativeData = [
   {
     label: "Curative & tertiary",
     value: 54,
-    color: "#ff9b4a",
-    note: "The largest spending share still sits in downstream treatment, which crowds out earlier intervention.",
+    color: "#ffb15f",
+    note: "The largest spending share still sits in downstream treatment, crowding out earlier intervention.",
     signal: "Dominant budget line",
-    source: "NHSRC 2022 mix cited in the presentation"
+    source: "NHSRC 2022 mix used in the presentation"
   },
   {
     label: "Primary care",
     value: 21,
-    color: "#1eb69e",
+    color: "#1cbca1",
     note: "Primary care remains far below the policy ambition of making it the system's main spending platform.",
     signal: "Policy priority area",
-    source: "Government health spending share"
+    source: "NHP 2017 vs actual spend"
   },
   {
     label: "Preventive & public health",
     value: 13,
-    color: "#71f5c4",
+    color: "#7cf5cb",
     note: "Prevention receives a small share even though it often carries the strongest long-run social return.",
     signal: "Upstream investment gap",
     source: "Government health spending share"
@@ -78,7 +78,7 @@ const allocativeData = [
   {
     label: "Admin & other",
     value: 12,
-    color: "#8aa4c9",
+    color: "#97abc9",
     note: "Support and administration matter, but their value depends on how well they reinforce frontline delivery.",
     signal: "Support expenditure",
     source: "Government health spending share"
@@ -89,58 +89,58 @@ const governanceData = [
   {
     label: "Tamil Nadu",
     value: 94,
-    color: "#47f5d1",
+    color: "#53f7d3",
     note: "High utilization suggests strong budget execution and relatively fewer delivery frictions.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Kerala",
     value: 91,
-    color: "#2ed1ba",
+    color: "#36d9c2",
     note: "Most allocated funds are translated into actual spending, indicating a well-functioning delivery chain.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Gujarat",
     value: 83,
-    color: "#6ab7ff",
+    color: "#68b7ff",
     note: "Execution remains solid, though some spending capacity is still left unrealized.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Rajasthan",
     value: 72,
-    color: "#ffc96b",
+    color: "#ffd37a",
     note: "A sizeable share of budget authority does not fully convert into delivered expenditure.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Madhya Pradesh",
     value: 65,
-    color: "#ff9b4a",
+    color: "#ffb15f",
     note: "Lower utilization points to execution losses from procurement, staffing, or management bottlenecks.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Jharkhand",
     value: 58,
-    color: "#ff845d",
+    color: "#ff9356",
     note: "A large execution gap means fewer resources actually reach facilities than the budget suggests.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   },
   {
     label: "Assam",
     value: 51,
-    color: "#ff6f6f",
+    color: "#ff757f",
     note: "The lowest utilization in the comparison, highlighting how weak execution can shrink effective spending.",
-    source: "Illustrative NHM utilization comparison"
+    source: "Illustrative NHM utilisation comparison"
   }
 ];
 
 const equityMetrics = [
   {
     label: "OOP share",
-    caption: "Out-of-pocket share of total health expenditure",
+    caption: "OOP as % of Total Health Expenditure",
     value: "48.2%",
     level: 48.2,
     note: "The burden has fallen since 2004, but households still finance nearly half of all health spending directly.",
@@ -148,11 +148,11 @@ const equityMetrics = [
       "Long-run improvement is real, yet the remaining level still signals a substantial transfer of risk from the public system to households.",
     footerLeft: "69% in 2004",
     footerRight: "48.2% in 2021",
-    color: "#ff9b4a"
+    color: "#ffb15f"
   },
   {
     label: "CHE",
-    caption: "Households facing catastrophic health expenditure",
+    caption: "Households facing catastrophic expenditure",
     value: "17.3%",
     level: 17.3,
     note: "Nearly one in six households still crosses the catastrophic expenditure threshold.",
@@ -160,11 +160,11 @@ const equityMetrics = [
       "If this many families breach the CHE rule, the system is not insulating households from medical shock even when average spending looks contained.",
     footerLeft: "WHO-style 10% threshold",
     footerRight: "NSSO 75th Round",
-    color: "#ff719c"
+    color: "#ff7ba7"
   },
   {
     label: "Poverty",
-    caption: "People pushed into poverty by health costs each year",
+    caption: "Indians pushed into poverty by health costs / yr",
     value: "6.3 Cr",
     level: 63,
     note: "Healthcare payments still push millions below the poverty line every year.",
@@ -172,7 +172,7 @@ const equityMetrics = [
       "This converts medical spending into a direct welfare loss and shows why efficiency has to be judged partly by financial protection.",
     footerLeft: "Annual estimate",
     footerRight: "Selvaraj et al.",
-    color: "#6ab7ff"
+    color: "#68b7ff"
   },
   {
     label: "Quintile gap",
@@ -184,9 +184,51 @@ const equityMetrics = [
       "An unequal risk profile means national averages can improve while the households under the greatest strain are still being left behind.",
     footerLeft: "Distributional gap",
     footerRight: "Das et al.",
-    color: "#ffc96b"
+    color: "#ffd37a"
   }
 ];
+
+const equityTrendData = [
+  { year: 2004, oop: 69.0, govt: 22.0 },
+  { year: 2007, oop: 66.0, govt: 24.0 },
+  { year: 2010, oop: 62.0, govt: 27.0 },
+  { year: 2013, oop: 60.0, govt: 29.0 },
+  { year: 2015, oop: 58.0, govt: 30.0 },
+  { year: 2017, oop: 54.0, govt: 33.0 },
+  { year: 2019, oop: 51.0, govt: 36.0 },
+  { year: 2021, oop: 48.2, govt: 38.6 }
+];
+
+const synthesisDetails = {
+  technical: {
+    label: "Technical",
+    title: "Farrell frontier discipline",
+    theory: "Farrell (1957) DEA frontier; Leibenstein X-inefficiency",
+    equation: "TE = theta* in [0,1]",
+    stat: "Avg TE is about 0.55 across public PHCs (2019), showing substantial unrealized output at existing input levels."
+  },
+  allocative: {
+    label: "Allocative",
+    title: "Marginal benefit per rupee",
+    theory: "Pareto optimality; MB/cost equalisation; externalities",
+    equation: "max Sigma p_i q_i subject to Sigma c_i q_i <= B",
+    stat: "Only about 13% of budget is on preventive care, while NHP 2017 set a much more primary-care-heavy aspiration."
+  },
+  governance: {
+    label: "Governance",
+    title: "Execution is part of efficiency",
+    theory: "Principal-agent theory; rent-seeking; incomplete contracts",
+    equation: "E_eff = B x (1 - delta)",
+    stat: "Around 25% NHM fiduciary risk and 40% PHC doctor absenteeism show how paper allocations shrink before they reach patients."
+  },
+  equity: {
+    label: "Equity / Risk",
+    title: "Household protection as a binding constraint",
+    theory: "Rawlsian justice; Sen's capability approach; CHE framework",
+    equation: "CHE = 1 if OOP / C_hh > kappa",
+    stat: "48.2% OOP share, 17.3% households in CHE, and 6.3 crore people pushed into poverty show why narrow cost efficiency fails."
+  }
+};
 
 let scheduleSlideFit = () => {};
 
@@ -210,6 +252,16 @@ function buildDetailCard({ label, value, copy, fill, footerLeft, footerRight }) 
       <span>${footerLeft}</span>
       <span>${footerRight}</span>
     </div>
+  `;
+}
+
+function buildSynthesisDetail(entry) {
+  return `
+    <p class="detail-label">${entry.label}</p>
+    <h3>${entry.title}</h3>
+    <p class="synthesis-detail-copy">${entry.theory}</p>
+    <p class="synthesis-equation">${entry.equation}</p>
+    <p class="synthesis-detail-copy">${entry.stat}</p>
   `;
 }
 
@@ -251,7 +303,6 @@ function setFigureInteraction({ target, detailTargetId, data, renderDetail, init
   });
 
   target.addEventListener("mouseleave", () => activate(activeIndex));
-
   activate(initialIndex);
 }
 
@@ -409,6 +460,82 @@ function renderDonutChart(targetId, data, options) {
   });
 }
 
+function buildLinePath(data, accessor, xForIndex, yForValue) {
+  return data
+    .map((entry, index) => `${index === 0 ? "M" : "L"} ${xForIndex(index)} ${yForValue(accessor(entry))}`)
+    .join(" ");
+}
+
+function renderLineChart(targetId, data, options) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  const width = 760;
+  const height = 320;
+  const margin = { top: 20, right: 18, bottom: 52, left: 48 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const min = options.min ?? 0;
+  const max = options.max ?? 100;
+  const step = innerWidth / Math.max(1, data.length - 1);
+  const xForIndex = (index) => index * step;
+  const yForValue = (value) => innerHeight - ((value - min) / (max - min)) * innerHeight;
+
+  let svg = `
+    <svg class="chart-svg" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="${targetId}-title">
+      <title id="${targetId}-title">${options.title}</title>
+      <g transform="translate(${margin.left},${margin.top})">
+  `;
+
+  for (let tick = min; tick <= max; tick += options.tickStep ?? 20) {
+    const y = yForValue(tick);
+    svg += `
+      <line class="chart-gridline" x1="0" y1="${y}" x2="${innerWidth}" y2="${y}"></line>
+      <text class="chart-label" x="-12" y="${y + 4}" text-anchor="end">${tick}</text>
+    `;
+  }
+
+  svg += `
+      <line class="chart-axis" x1="0" y1="${innerHeight}" x2="${innerWidth}" y2="${innerHeight}"></line>
+      <line class="chart-axis" x1="0" y1="0" x2="0" y2="${innerHeight}"></line>
+      <path class="chart-line chart-line-primary" d="${buildLinePath(data, (entry) => entry.oop, xForIndex, yForValue)}"></path>
+      <path class="chart-line chart-line-secondary" d="${buildLinePath(data, (entry) => entry.govt, xForIndex, yForValue)}"></path>
+  `;
+
+  data.forEach((entry, index) => {
+    const x = xForIndex(index);
+    const oopY = yForValue(entry.oop);
+    const govtY = yForValue(entry.govt);
+
+    svg += `
+      <g
+        class="chart-node"
+        data-index="${index}"
+        tabindex="0"
+        focusable="true"
+        role="button"
+        aria-label="${entry.year}: OOP ${entry.oop} percent, government ${entry.govt} percent"
+      >
+        <line class="chart-gridline" x1="${x}" y1="0" x2="${x}" y2="${innerHeight}"></line>
+        <circle class="chart-dot" cx="${x}" cy="${oopY}" r="5.5" fill="#ffb15f"></circle>
+        <circle class="chart-dot" cx="${x}" cy="${govtY}" r="5.5" fill="#68b7ff"></circle>
+        <text class="chart-label" x="${x}" y="${innerHeight + 24}" text-anchor="middle">${entry.year}</text>
+      </g>
+    `;
+  });
+
+  svg += "</g></svg>";
+  target.innerHTML = svg;
+
+  setFigureInteraction({
+    target,
+    detailTargetId: options.detailTargetId,
+    data,
+    renderDetail: options.renderDetail,
+    initialIndex: options.initialIndex ?? data.length - 1
+  });
+}
+
 function renderTechnicalDetail(entry) {
   const frontierGap = Math.round((1 - entry.value) * 100);
   return buildDetailCard({
@@ -441,6 +568,17 @@ function renderGovernanceDetail(entry) {
     fill: entry.value,
     footerLeft: `${executionGap}% not utilized`,
     footerRight: entry.source
+  });
+}
+
+function renderTrendDetail(entry) {
+  return buildDetailCard({
+    label: String(entry.year),
+    value: `${entry.oop}% / ${entry.govt}%`,
+    copy: "OOP share trends downward while the government share rises across the trajectory shown in the presentation.",
+    fill: entry.oop,
+    footerLeft: "OOP / Govt share of THE",
+    footerRight: "Trend year"
   });
 }
 
@@ -491,6 +629,61 @@ function setupEquityDashboard() {
   activate(0);
 }
 
+function setupSynthesisPanel() {
+  const selector = document.getElementById("synthesis-selector");
+  const detailTarget = document.getElementById("synthesis-detail");
+  const rows = [...document.querySelectorAll(".matrix-table tbody tr")];
+
+  if (!selector || !detailTarget || !rows.length) return;
+
+  const buttons = [...selector.querySelectorAll(".synthesis-chip")];
+
+  function activate(key) {
+    const entry = synthesisDetails[key];
+    if (!entry) return;
+
+    buttons.forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.lens === key);
+    });
+
+    rows.forEach((row) => {
+      row.classList.toggle("is-active", row.dataset.lens === key);
+    });
+
+    detailTarget.innerHTML = buildSynthesisDetail(entry);
+    scheduleSlideFit();
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => activate(button.dataset.lens));
+    button.addEventListener("mouseenter", () => activate(button.dataset.lens));
+    button.addEventListener("focus", () => activate(button.dataset.lens));
+  });
+
+  rows.forEach((row) => {
+    row.addEventListener("click", () => activate(row.dataset.lens));
+    row.addEventListener("mouseenter", () => activate(row.dataset.lens));
+  });
+
+  activate("technical");
+}
+
+function setupJumpLinks() {
+  const jumpButtons = [...document.querySelectorAll("[data-jump]")];
+  if (!jumpButtons.length) return;
+
+  const slideMap = new Map([...document.querySelectorAll(".slide")].map((slide, index) => [slide.id, index]));
+
+  jumpButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.jump;
+      const targetIndex = slideMap.get(targetId);
+      if (typeof targetIndex !== "number") return;
+      window.location.hash = `#${targetId}`;
+    });
+  });
+}
+
 function setupSlideAutoFit() {
   const shells = [...document.querySelectorAll(".slide-shell")];
   const stage = document.getElementById("deck-stage");
@@ -498,6 +691,10 @@ function setupSlideAutoFit() {
 
   function fitShell(shell) {
     shell.style.setProperty("--fit-scale", "1");
+
+    if (window.innerWidth <= 900) {
+      return;
+    }
 
     const viewport = shell.closest(".slide");
     if (!viewport) return;
@@ -711,6 +908,18 @@ renderBarChart("governance-chart", governanceData, {
   initialIndex: 1
 });
 
+renderLineChart("equity-chart", equityTrendData, {
+  title: "Out-of-pocket versus government share of total health expenditure",
+  min: 0,
+  max: 80,
+  tickStep: 20,
+  detailTargetId: "equity-chart-detail",
+  renderDetail: renderTrendDetail,
+  initialIndex: equityTrendData.length - 1
+});
+
 setupSlideAutoFit();
 setupEquityDashboard();
+setupSynthesisPanel();
+setupJumpLinks();
 setupSlideDeck();
