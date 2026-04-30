@@ -3,479 +3,576 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A web version of the presentation Defining Efficiency in India's Public Health Sector.">
+  <meta name="description" content="A slide-based web presentation on how efficiency is defined in India's public health sector.">
   <title>Defining Efficiency in India's Public Health Sector</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero reveal is-visible" id="top">
-      <div class="hero-copy">
+  <div class="deck-app">
+    <div class="scene-orb scene-orb-a" aria-hidden="true"></div>
+    <div class="scene-orb scene-orb-b" aria-hidden="true"></div>
+    <div class="scene-grid" aria-hidden="true"></div>
+
+    <header class="deck-chrome">
+      <div class="chrome-brand">
         <p class="eyebrow">Economics of Health Systems | Kevin Felix</p>
-        <h1>Defining Efficiency in India's Public Health Sector</h1>
-        <p class="hero-lead">
-          A rebuilt web version of the presentation with clearer equations, section-specific statistics,
-          and a cleaner flow from definition to synthesis.
-        </p>
-        <p class="hero-note">
-          Use the section buttons to open one part of the presentation at a time in this same tab.
-          Each section keeps only the evidence relevant to that lens of efficiency.
-        </p>
-        <div class="hero-tags" aria-label="Presentation sections">
-          <span>Technical Efficiency</span>
-          <span>Allocative Efficiency</span>
-          <span>Governance Efficiency</span>
-          <span>Equity &amp; Financial Risk</span>
+        <div class="chrome-copy">
+          <p class="chrome-label" id="chrome-label">Definition</p>
+          <h2 id="chrome-title">Why efficiency in health systems needs more than one metric</h2>
         </div>
       </div>
-      <nav class="section-nav" aria-label="Section navigation">
-        <button class="section-button is-active" type="button" data-section="intro" aria-controls="intro" aria-selected="true">Introduction</button>
-        <button class="section-button" type="button" data-section="technical" aria-controls="technical" aria-selected="false">Technical Efficiency</button>
-        <button class="section-button" type="button" data-section="allocative" aria-controls="allocative" aria-selected="false">Allocative Efficiency</button>
-        <button class="section-button" type="button" data-section="governance" aria-controls="governance" aria-selected="false">Governance Efficiency</button>
-        <button class="section-button" type="button" data-section="equity" aria-controls="equity" aria-selected="false">Equity &amp; Financial Risk</button>
-        <button class="section-button" type="button" data-section="synthesis" aria-controls="synthesis" aria-selected="false">Synthesis</button>
-      </nav>
-      <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+
+      <div class="chrome-actions">
+        <p class="key-hint">Use &larr; and &rarr;</p>
+        <p class="slide-counter" id="slide-counter">01 / 06</p>
+        <div class="progress-track" aria-hidden="true">
+          <span class="progress-bar" id="progress-bar"></span>
+        </div>
+        <div class="button-row">
+          <button class="deck-button" id="prev-slide" type="button" aria-label="Previous slide">Previous</button>
+          <button class="deck-button is-primary" id="next-slide" type="button" aria-label="Next slide">Next</button>
+        </div>
+      </div>
     </header>
 
-    <main class="section-stage" id="section-stage">
-      <section class="panel panel-light reveal is-visible topic-panel" id="intro" data-section="intro">
-        <div class="section-heading">
-          <p class="eyebrow">Introduction</p>
-          <h2>Why Health Economics Defines Efficiency Differently</h2>
-          <p>
-            In classical economics, efficiency often means either maximizing output from a given set of inputs
-            or minimizing cost for a given output. Health systems need a wider definition because healthcare is
-            shaped by information asymmetry, externalities, and the social judgment that care should not depend
-            only on ability to pay.
-          </p>
-        </div>
-
-        <div class="intro-grid">
-          <article class="copy-card">
-            <h3>The Standard Economics Definition</h3>
-            <p>
-              A textbook production frontier asks whether a system is getting the highest possible output from
-              its resources. That logic still matters, but it is not enough on its own for public health.
-            </p>
-          </article>
-
-          <article class="copy-card">
-            <h3>Why Health Systems Are Different</h3>
-            <p>
-              Patients cannot fully judge quality, preventive care generates spillovers beyond the individual,
-              and public systems are expected to protect access even when market demand is weak.
-            </p>
-          </article>
-
-          <article class="copy-card">
-            <h3>A Three-Lens Framework</h3>
-            <p>
-              Health economists therefore separate efficiency into technical, allocative, and governance lenses,
-              with equity and financial risk acting as a binding constraint on any narrow cost-saving view.
-            </p>
-          </article>
-        </div>
-
-        <div class="framework-grid">
-          <article class="lens-card lens-teal">
-            <h3>Technical Efficiency</h3>
-            <p class="equation-inline">TE = &theta;<sup>*</sup></p>
-            <p>Are existing inputs translated into as much health output as possible?</p>
-          </article>
-
-          <article class="lens-card lens-blue">
-            <h3>Allocative Efficiency</h3>
-            <p class="equation-inline">max &Sigma; p<sub>i</sub>q<sub>i</sub> s.t. &Sigma; c<sub>i</sub>q<sub>i</sub> &le; B</p>
-            <p>Is the budget going to the services with the highest social return?</p>
-          </article>
-
-          <article class="lens-card lens-rose">
-            <h3>Governance Efficiency</h3>
-            <p class="equation-inline">E<sub>eff</sub> = B (1 - &delta;)</p>
-            <p>How much of the planned budget actually reaches patients?</p>
-          </article>
-
-          <article class="lens-card lens-sand">
-            <h3>Equity &amp; Financial Risk</h3>
-            <p class="equation-inline">CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</p>
-            <p>Does cost-cutting simply shift the burden onto households?</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel panel-dark reveal topic-panel" id="technical" data-section="technical" hidden>
-        <div class="section-heading">
-          <p class="eyebrow">Technical Efficiency</p>
-          <h2>More Output From the Same Input - Or the Same Output at Lower Cost</h2>
-        </div>
-
-        <div class="section-layout">
-          <div class="section-copy">
-            <p>
-              Technical efficiency asks how close a production unit is to the best-practice frontier. If one
-              public facility can achieve the same output with fewer beds, staff, or rupees than another, it is
-              operating more efficiently.
-            </p>
-            <p>
-              Data Envelopment Analysis (DEA) is useful here because it builds the frontier from observed units
-              without forcing a single production function on a heterogeneous health system.
-            </p>
-            <p>
-              This section intentionally keeps the evidence focused on productivity and frontier distance. Broader
-              spending figures from the slides have been removed because they describe system scale, not technical
-              efficiency itself.
-            </p>
+    <main class="deck-stage" id="deck-stage">
+      <section
+        class="slide theme-intro is-active"
+        id="intro"
+        data-label="Definition"
+        data-title="Why efficiency in health systems needs more than one metric"
+        aria-hidden="false"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">01</span>
+            <p class="slide-kicker">Introduction</p>
           </div>
 
-          <div class="section-aside">
-            <article class="stat-card">
-              <p class="stat-value">~0.55</p>
-              <p class="stat-label">Average TE score across public PHCs (2019)</p>
-              <p class="stat-source">Agarwal &amp; Kumar, Health Policy &amp; Planning</p>
-            </article>
+          <div class="intro-layout">
+            <div class="intro-copy">
+              <h1>Defining Efficiency in India's Public Health Sector</h1>
+              <p class="hero-lead">
+                Efficiency in public health is not just lower cost. It is the ability to convert inputs into
+                outcomes, direct budgets toward high-value care, deliver funds without leakage, and protect
+                households from financial shock.
+              </p>
 
-            <article class="stat-card">
-              <p class="stat-value">1.00</p>
-              <p class="stat-label">Frontier benchmark for a fully efficient unit</p>
-              <p class="stat-source">Farrell (1957)</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="detail-grid">
-          <article class="equation-card">
-            <p class="equation-title">DEA Frontier Formulation</p>
-            <div class="equation-body">
-              <p>&theta;<sup>*</sup> = min &theta;</p>
-              <p class="equation-subhead">subject to</p>
-              <p>X&lambda; &le; &theta;x<sub>0</sub></p>
-              <p>Y&lambda; &ge; y<sub>0</sub>, &lambda; &ge; 0</p>
-              <p>TE = &theta;<sup>*</sup> and TE &isin; [0, 1]</p>
-            </div>
-            <p class="equation-note">
-              &theta; is the efficiency score, X and Y are the input and output matrices,
-              and &lambda; are peer weights.
-            </p>
-          </article>
-
-          <article class="chart-card">
-            <div class="card-header">
-              <h3>Illustrative State TE Spread</h3>
-              <p>Frontier-style comparison based on the presentation's state examples.</p>
-            </div>
-            <div id="technical-chart" class="chart-frame" aria-label="Technical efficiency bar chart"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel panel-light reveal topic-panel" id="allocative" data-section="allocative" hidden>
-        <div class="section-heading">
-          <p class="eyebrow">Allocative Efficiency</p>
-          <h2>Putting Resources Into the Service Mix With the Highest Social Return</h2>
-        </div>
-
-        <div class="section-layout">
-          <div class="section-copy">
-            <p>
-              Allocative efficiency asks whether spending is directed toward the right services. A technically
-              efficient system can still underperform if the budget is tilted toward lower-value uses while
-              prevention and primary care remain underfunded.
-            </p>
-            <p>
-              In this lens, the relevant statistics are not about hospital productivity. They are about service
-              mix, opportunity cost, and whether the budget aligns with the highest marginal social benefit.
-            </p>
-            <p>
-              The presentation's evidence points to a recurring structural issue: public spending remains heavily
-              weighted toward curative and tertiary care even though policy targets emphasize primary care.
-            </p>
-          </div>
-
-          <div class="section-aside">
-            <article class="stat-card">
-              <p class="stat-value">21%</p>
-              <p class="stat-label">Approximate primary-care share of government health spending</p>
-              <p class="stat-source">NHP 2017 target was about two-thirds</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">13%</p>
-              <p class="stat-label">Approximate preventive and public health share</p>
-              <p class="stat-source">NHSRC 2022 spending mix</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">35% IMR down</p>
-              <p class="stat-label">Reduction linked to PHC expansion in the JSY evidence cited in the slides</p>
-              <p class="stat-source">Lim et al., The Lancet (2010)</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="detail-grid">
-          <article class="equation-card">
-            <p class="equation-title">Social Welfare Allocation Problem</p>
-            <div class="equation-body">
-              <p>max W = &Sigma; p<sub>i</sub>q<sub>i</sub></p>
-              <p class="equation-subhead">subject to</p>
-              <p>&Sigma; c<sub>i</sub>q<sub>i</sub> &le; B</p>
-              <p>Optimal allocation when MB<sub>i</sub> / c<sub>i</sub> = MB<sub>j</sub> / c<sub>j</sub> for all i, j</p>
-            </div>
-            <p class="equation-note">
-              The budget is allocatively efficient when the marginal benefit per rupee is equalized across competing uses.
-            </p>
-          </article>
-
-          <article class="chart-card">
-            <div class="card-header">
-              <h3>Government Health Spend Mix</h3>
-              <p>The mix below stays in the allocative section because it is directly about where the budget goes.</p>
-            </div>
-            <div id="allocative-chart" class="chart-frame" aria-label="Allocative efficiency donut chart"></div>
-            <div class="legend-grid">
-              <span><i class="legend-chip chip-orange"></i>Curative &amp; tertiary</span>
-              <span><i class="legend-chip chip-teal"></i>Primary care</span>
-              <span><i class="legend-chip chip-mint"></i>Preventive &amp; public health</span>
-              <span><i class="legend-chip chip-slate"></i>Admin &amp; other</span>
-            </div>
-          </article>
-        </div>
-
-        <article class="highlight-card">
-          <h3>Key implication</h3>
-          <p>
-            Bihar's U5MR of 56 per 1,000 versus Kerala's 6 per 1,000, despite comparable per-capita public
-            spending in the presentation's comparison, points to allocation and service mix problems rather than
-            budget size alone.
-          </p>
-        </article>
-      </section>
-
-      <section class="panel panel-dark reveal topic-panel" id="governance" data-section="governance" hidden>
-        <div class="section-heading">
-          <p class="eyebrow">Governance Efficiency</p>
-          <h2>How Much of the Budget Actually Reaches Patients</h2>
-        </div>
-
-        <div class="section-layout">
-          <div class="section-copy">
-            <p>
-              Governance efficiency captures the gap between money authorized and money effectively translated into
-              care. Even a technically sound and well-allocated plan can fail if procurement, payroll, transfers,
-              and monitoring leak value along the way.
-            </p>
-            <p>
-              This is where principal-agent problems matter. When the principal cannot fully observe effort, price,
-              or compliance, agents can shirk or extract rents.
-            </p>
-            <p>
-              The statistics kept here focus on leakage, absenteeism, and fund utilization - all direct governance
-              indicators rather than outcome or spending-mix measures.
-            </p>
-          </div>
-
-          <div class="section-aside">
-            <article class="stat-card">
-              <p class="stat-value">~25%</p>
-              <p class="stat-label">Average NHM fiduciary risk across states</p>
-              <p class="stat-source">CAG NHM audit reports cited in the slides</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">40%</p>
-              <p class="stat-label">Doctor absenteeism in rural PHCs</p>
-              <p class="stat-source">Banerjee &amp; Duflo (2006)</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="detail-grid">
-          <article class="equation-card">
-            <p class="equation-title">Effective Spending After Leakage</p>
-            <div class="equation-body">
-              <p>E<sub>eff</sub> = B (1 - &delta;)</p>
-              <p>&delta; = &Sigma; (L<sub>i</sub> / B)</p>
-              <p>L<sub>i</sub> = procurement leakage + absenteeism + ghost workers</p>
-            </div>
-            <p class="equation-note">
-              If &delta; = 0.25, then only 75 percent of each budgeted rupee reaches the point of care.
-            </p>
-          </article>
-
-          <article class="chart-card">
-            <div class="card-header">
-              <h3>NHM Fund Utilization by State</h3>
-              <p>These utilization rates stay here because they measure budget execution rather than service choice.</p>
-            </div>
-            <div id="governance-chart" class="chart-frame" aria-label="Governance efficiency bar chart"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel panel-light reveal topic-panel" id="equity" data-section="equity" hidden>
-        <div class="section-heading">
-          <p class="eyebrow">Equity &amp; Financial Risk</p>
-          <h2>Efficiency Without Equity Is Incomplete</h2>
-        </div>
-
-        <div class="section-layout">
-          <div class="section-copy">
-            <p>
-              A system is not meaningfully efficient if it cuts public cost by shifting risk onto households.
-              Health economics therefore treats equity and financial protection as a binding constraint, not a
-              decorative add-on.
-            </p>
-            <p>
-              In this section, the relevant evidence is household burden: out-of-pocket spending, catastrophic
-              expenditure, poverty effects, and the distribution of that burden across income groups.
-            </p>
-            <p>
-              These are kept separate from governance and allocative statistics because they answer a different
-              question: who pays when the system underperforms?
-            </p>
-          </div>
-
-          <div class="section-aside">
-            <article class="stat-card">
-              <p class="stat-value">48.2%</p>
-              <p class="stat-label">Out-of-pocket share of total health expenditure</p>
-              <p class="stat-source">NHA 2021</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">17.3%</p>
-              <p class="stat-label">Households facing catastrophic health expenditure</p>
-              <p class="stat-source">NSSO 75th Round (2018)</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">6.3 Cr</p>
-              <p class="stat-label">People pushed into poverty by health costs each year</p>
-              <p class="stat-source">Selvaraj et al. (2018)</p>
-            </article>
-
-            <article class="stat-card">
-              <p class="stat-value">5x</p>
-              <p class="stat-label">CHE gap between poorest and richest quintiles</p>
-              <p class="stat-source">Das et al. (2022)</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="detail-grid">
-          <article class="equation-card">
-            <p class="equation-title">Catastrophic Health Expenditure Rule</p>
-            <div class="equation-body">
-              <p>CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</p>
-              <p>&kappa; = 10% under the WHO threshold cited in the presentation</p>
-              <p>Financial risk = E[CHE] across income quintiles</p>
-              <p>Equity gap = CHE<sub>poor</sub> / CHE<sub>rich</sub></p>
-            </div>
-            <p class="equation-note">
-              A lower budget number is not an efficiency gain if households absorb the difference through private spending.
-            </p>
-          </article>
-
-          <article class="trend-card">
-            <div class="card-header">
-              <h3>Out-of-pocket burden remains high</h3>
-              <p>The slide deck highlights the long-run decline, but also why the remaining burden still matters.</p>
-            </div>
-            <div class="oop-trend" aria-label="Out of pocket expenditure trend from 2004 to 2021">
-              <div class="trend-point trend-start">
-                <span class="trend-value">69%</span>
-                <span class="trend-year">2004</span>
-              </div>
-              <div class="trend-rail">
-                <div class="trend-line"></div>
-              </div>
-              <div class="trend-point trend-end">
-                <span class="trend-value">48.2%</span>
-                <span class="trend-year">2021</span>
+              <div class="hero-tags" aria-label="Core efficiency lenses">
+                <span>Technical</span>
+                <span>Allocative</span>
+                <span>Governance</span>
+                <span>Equity &amp; Risk</span>
               </div>
             </div>
-            <p class="trend-note">
-              The direction is encouraging, but the 2021 level still signals substantial financial risk transfer to households.
-            </p>
-          </article>
+
+            <aside class="glass-panel nav-panel">
+              <p class="panel-label">Deck flow</p>
+              <h3>Definition to synthesis</h3>
+              <p>
+                Move one slide at a time to keep the equation, evidence, and policy logic aligned inside each
+                efficiency lens.
+              </p>
+
+              <div class="signal-grid">
+                <article>
+                  <span>TE</span>
+                  <p>Frontier distance</p>
+                </article>
+                <article>
+                  <span>AE</span>
+                  <p>Service mix choice</p>
+                </article>
+                <article>
+                  <span>GE</span>
+                  <p>Leakage and execution</p>
+                </article>
+                <article>
+                  <span>ER</span>
+                  <p>Household protection</p>
+                </article>
+              </div>
+            </aside>
+          </div>
+
+          <div class="concept-grid">
+            <article class="info-card">
+              <p class="panel-label">Standard economics</p>
+              <h3>Output from inputs</h3>
+              <p>
+                Classical efficiency asks whether a system maximizes output from a fixed bundle of labor, capital,
+                and spending.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <p class="panel-label">Why health is different</p>
+              <h3>Care has spillovers and asymmetry</h3>
+              <p>
+                Patients cannot perfectly judge quality, prevention benefits others, and public systems are
+                expected to preserve access when markets would undersupply it.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <p class="panel-label">Working definition</p>
+              <h3>Efficiency needs multiple lenses</h3>
+              <p>
+                Health economists separate production, allocation, execution, and household protection because a
+                system can perform well on one dimension and fail on another.
+              </p>
+            </article>
+          </div>
+
+          <div class="lens-grid">
+            <article class="lens-card lens-teal">
+              <p class="panel-label">Technical</p>
+              <h3>Production frontier</h3>
+              <p class="equation-inline">TE = &theta;<sup>*</sup></p>
+              <p>How close is a facility to best-practice output for its inputs?</p>
+            </article>
+
+            <article class="lens-card lens-blue">
+              <p class="panel-label">Allocative</p>
+              <h3>Highest-value mix</h3>
+              <p class="equation-inline">MB<sub>i</sub> / c<sub>i</sub> = MB<sub>j</sub> / c<sub>j</sub></p>
+              <p>Does the budget flow toward the services with the strongest social return?</p>
+            </article>
+
+            <article class="lens-card lens-rose">
+              <p class="panel-label">Governance</p>
+              <h3>Budget that reaches care</h3>
+              <p class="equation-inline">E<sub>eff</sub> = B (1 - &delta;)</p>
+              <p>How much planned spending survives leakage, absenteeism, and weak execution?</p>
+            </article>
+
+            <article class="lens-card lens-gold">
+              <p class="panel-label">Equity &amp; risk</p>
+              <h3>Protection against shock</h3>
+              <p class="equation-inline">CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</p>
+              <p>Are lower public costs being pushed onto households instead?</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="panel panel-summary reveal topic-panel" id="synthesis" data-section="synthesis" hidden>
-        <div class="section-heading">
-          <p class="eyebrow">Synthesis</p>
-          <h2>Three Lenses, One System</h2>
-          <p>
-            Once efficiency is defined across production, allocation, execution, and household protection, the
-            policy question becomes sharper: does public spending in India translate into better health outcomes,
-            or do bottlenecks shift across these lenses?
-          </p>
-        </div>
+      <section
+        class="slide theme-technical"
+        id="technical"
+        data-label="Technical Efficiency"
+        data-title="Technical efficiency measures distance from the production frontier"
+        aria-hidden="true"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">02</span>
+            <p class="slide-kicker">Technical Efficiency</p>
+          </div>
 
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Lens</th>
-                <th>Core question</th>
-                <th>Clear equation</th>
-                <th>Relevant statistic kept</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Technical</td>
-                <td>Are inputs used without avoidable waste?</td>
-                <td>TE = &theta;<sup>*</sup>, TE &isin; [0,1]</td>
-                <td>Average TE score is about 0.55 across public PHCs</td>
-              </tr>
-              <tr>
-                <td>Allocative</td>
-                <td>Is the budget going to the highest-value mix of services?</td>
-                <td>MB<sub>i</sub> / c<sub>i</sub> = MB<sub>j</sub> / c<sub>j</sub></td>
-                <td>Primary care remains near 21 percent versus a much higher policy target</td>
-              </tr>
-              <tr>
-                <td>Governance</td>
-                <td>How much budget survives leakage and weak execution?</td>
-                <td>E<sub>eff</sub> = B (1 - &delta;)</td>
-                <td>NHM fiduciary risk is about 25 percent and absenteeism reaches 40 percent</td>
-              </tr>
-              <tr>
-                <td>Equity / Risk</td>
-                <td>Who pays when the system fails?</td>
-                <td>CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</td>
-                <td>48.2 percent OOP share and 17.3 percent of households in CHE</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="takeaways">
-          <article class="takeaway-card">
-            <h3>Key takeaway</h3>
+          <div class="slide-heading">
+            <h2>Technical efficiency asks whether the same inputs could produce more health output</h2>
             <p>
-              A larger budget alone does not guarantee efficiency. The system has to use inputs productively,
-              fund the right mix of care, deliver money cleanly, and protect households from financial shock.
+              A facility is technically efficient when its mix of staff, beds, and budget is converted into the
+              maximum feasible output relative to comparable units.
             </p>
-          </article>
+          </div>
 
-          <article class="takeaway-card">
-            <h3>Presentation sources used</h3>
-            <ul class="source-list">
-              <li>Farrell (1957); Leibenstein (1966)</li>
-              <li>National Health Policy 2017; National Health Accounts 2021</li>
-              <li>NHSRC 2022; SRS 2019-20; NSSO 75th Round (2018)</li>
-              <li>CAG NHM audit reporting; Banerjee &amp; Duflo (2006)</li>
-              <li>Selvaraj et al. (2018); Das et al. (2022); Lim et al. (2010)</li>
-            </ul>
-          </article>
+          <div class="slide-columns">
+            <article class="equation-card">
+              <p class="equation-title">DEA frontier formulation</p>
+              <div class="equation-body">
+                <p>&theta;<sup>*</sup> = min &theta;</p>
+                <p class="equation-subhead">subject to</p>
+                <p>X&lambda; &le; &theta;x<sub>0</sub></p>
+                <p>Y&lambda; &ge; y<sub>0</sub>, &lambda; &ge; 0</p>
+                <p>TE = &theta;<sup>*</sup> and TE &isin; [0, 1]</p>
+              </div>
+              <p class="equation-note">
+                DEA is useful because it builds a best-practice frontier from observed facilities without forcing
+                one production function on a heterogeneous public system.
+              </p>
+            </article>
+
+            <article class="figure-card">
+              <div class="card-header">
+                <div>
+                  <p class="panel-label">Interactive figure</p>
+                  <h3>Illustrative state TE spread</h3>
+                </div>
+                <p class="figure-hint">Hover or tap a state</p>
+              </div>
+              <div id="technical-chart" class="chart-frame" aria-label="Technical efficiency bar chart"></div>
+              <div id="technical-detail" class="figure-detail"></div>
+            </article>
+          </div>
+
+          <div class="metric-row">
+            <article class="metric-card">
+              <p class="metric-value">~0.55</p>
+              <p class="metric-label">Average TE score across public PHCs</p>
+              <p class="metric-source">Agarwal &amp; Kumar, 2019</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">1.00</p>
+              <p class="metric-label">Benchmark for a fully efficient unit</p>
+              <p class="metric-source">Farrell, 1957</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">0.45</p>
+              <p class="metric-label">Illustrative Bihar score in the state comparison</p>
+              <p class="metric-source">Presentation state example</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide theme-allocative"
+        id="allocative"
+        data-label="Allocative Efficiency"
+        data-title="Allocative efficiency is about choosing the highest-value service mix"
+        aria-hidden="true"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">03</span>
+            <p class="slide-kicker">Allocative Efficiency</p>
+          </div>
+
+          <div class="slide-heading">
+            <h2>Allocative efficiency asks whether public money is going to the highest social return</h2>
+            <p>
+              A system can be productive and still underperform if too much spending is concentrated in lower-value
+              curative care while primary and preventive services remain underfunded.
+            </p>
+          </div>
+
+          <div class="slide-columns">
+            <article class="equation-card">
+              <p class="equation-title">Social welfare allocation rule</p>
+              <div class="equation-body">
+                <p>max W = &Sigma; p<sub>i</sub>q<sub>i</sub></p>
+                <p class="equation-subhead">subject to</p>
+                <p>&Sigma; c<sub>i</sub>q<sub>i</sub> &le; B</p>
+                <p>Optimal when MB<sub>i</sub> / c<sub>i</sub> = MB<sub>j</sub> / c<sub>j</sub></p>
+              </div>
+              <p class="equation-note">
+                Allocative efficiency is reached when each rupee delivers the same marginal social benefit across
+                competing services.
+              </p>
+            </article>
+
+            <article class="figure-card">
+              <div class="card-header">
+                <div>
+                  <p class="panel-label">Interactive figure</p>
+                  <h3>Government health spend mix</h3>
+                </div>
+                <p class="figure-hint">Hover or tap a segment</p>
+              </div>
+              <div id="allocative-chart" class="chart-frame" aria-label="Allocative efficiency donut chart"></div>
+              <div class="legend-grid">
+                <span><i class="legend-chip chip-orange"></i>Curative &amp; tertiary</span>
+                <span><i class="legend-chip chip-teal"></i>Primary care</span>
+                <span><i class="legend-chip chip-mint"></i>Preventive &amp; public health</span>
+                <span><i class="legend-chip chip-slate"></i>Admin &amp; other</span>
+              </div>
+              <div id="allocative-detail" class="figure-detail"></div>
+            </article>
+          </div>
+
+          <div class="metric-row">
+            <article class="metric-card">
+              <p class="metric-value">21%</p>
+              <p class="metric-label">Approximate primary-care share of government health spending</p>
+              <p class="metric-source">Compared with a much higher NHP 2017 aspiration</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">13%</p>
+              <p class="metric-label">Preventive and public health share</p>
+              <p class="metric-source">NHSRC 2022 spending mix</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">35%</p>
+              <p class="metric-label">Infant mortality reduction linked to PHC expansion in the cited evidence</p>
+              <p class="metric-source">Lim et al., 2010</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide theme-governance"
+        id="governance"
+        data-label="Governance Efficiency"
+        data-title="Governance efficiency measures how much budget actually reaches patients"
+        aria-hidden="true"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">04</span>
+            <p class="slide-kicker">Governance Efficiency</p>
+          </div>
+
+          <div class="slide-heading">
+            <h2>Governance efficiency is the gap between money authorized and care actually delivered</h2>
+            <p>
+              Procurement failures, absenteeism, weak monitoring, and delayed transfers all shrink the share of
+              the budget that reaches patients at the point of care.
+            </p>
+          </div>
+
+          <div class="slide-columns">
+            <article class="equation-card">
+              <p class="equation-title">Effective spending after leakage</p>
+              <div class="equation-body">
+                <p>E<sub>eff</sub> = B (1 - &delta;)</p>
+                <p>&delta; = &Sigma; (L<sub>i</sub> / B)</p>
+                <p>L<sub>i</sub> = procurement leakage + absenteeism + ghost workers</p>
+              </div>
+              <p class="equation-note">
+                If leakage equals 25 percent, only three-quarters of each budgeted rupee reaches the delivery
+                chain.
+              </p>
+            </article>
+
+            <article class="figure-card">
+              <div class="card-header">
+                <div>
+                  <p class="panel-label">Interactive figure</p>
+                  <h3>NHM fund utilization by state</h3>
+                </div>
+                <p class="figure-hint">Hover or tap a state</p>
+              </div>
+              <div id="governance-chart" class="chart-frame" aria-label="Governance efficiency bar chart"></div>
+              <div id="governance-detail" class="figure-detail"></div>
+            </article>
+          </div>
+
+          <div class="metric-row">
+            <article class="metric-card">
+              <p class="metric-value">~25%</p>
+              <p class="metric-label">Average NHM fiduciary risk across states</p>
+              <p class="metric-source">CAG NHM audits cited in the slides</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">40%</p>
+              <p class="metric-label">Doctor absenteeism in rural PHCs</p>
+              <p class="metric-source">Banerjee &amp; Duflo, 2006</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">51%</p>
+              <p class="metric-label">Illustrative low-utilization state in the comparison</p>
+              <p class="metric-source">Presentation state example</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide theme-equity"
+        id="equity"
+        data-label="Equity & Risk"
+        data-title="Efficiency is incomplete if costs are shifted onto households"
+        aria-hidden="true"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">05</span>
+            <p class="slide-kicker">Equity &amp; Financial Risk</p>
+          </div>
+
+          <div class="slide-heading">
+            <h2>Efficiency is incomplete if public savings simply become household health shocks</h2>
+            <p>
+              Health systems are not meaningfully efficient when lower public spending is offset by out-of-pocket
+              payments, catastrophic expenditure, or poverty caused by healthcare costs.
+            </p>
+          </div>
+
+          <div class="slide-columns">
+            <article class="equation-card">
+              <p class="equation-title">Catastrophic expenditure rule</p>
+              <div class="equation-body">
+                <p>CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</p>
+                <p>&kappa; = 10% under the threshold used in the presentation</p>
+                <p>Financial risk = E[CHE] across income groups</p>
+                <p>Equity gap = CHE<sub>poor</sub> / CHE<sub>rich</sub></p>
+              </div>
+              <p class="equation-note">
+                A lower public budget is not an efficiency gain when households absorb the gap through private
+                medical spending.
+              </p>
+            </article>
+
+            <article class="figure-card">
+              <div class="card-header">
+                <div>
+                  <p class="panel-label">Interactive dashboard</p>
+                  <h3>Household burden signals</h3>
+                </div>
+                <p class="figure-hint">Select a metric</p>
+              </div>
+
+              <div class="risk-dashboard">
+                <div class="risk-visual" id="equity-visual">
+                  <p class="risk-caption" id="equity-caption">Out-of-pocket share of total health expenditure</p>
+                  <p class="risk-value" id="equity-value">48.2%</p>
+                  <p class="risk-note" id="equity-note">The burden has fallen since 2004, but households still finance nearly half of all health spending directly.</p>
+                </div>
+
+                <div class="risk-selector" id="equity-selector" aria-label="Equity metrics">
+                  <button class="selector-chip is-active" type="button" data-index="0">OOP share</button>
+                  <button class="selector-chip" type="button" data-index="1">CHE</button>
+                  <button class="selector-chip" type="button" data-index="2">Poverty</button>
+                  <button class="selector-chip" type="button" data-index="3">Quintile gap</button>
+                </div>
+              </div>
+
+              <div class="trend-strip" aria-hidden="true">
+                <span>2004</span>
+                <div class="trend-line">
+                  <div class="trend-fill"></div>
+                </div>
+                <span>2021</span>
+              </div>
+
+              <div id="equity-detail" class="figure-detail"></div>
+            </article>
+          </div>
+
+          <div class="metric-row">
+            <article class="metric-card">
+              <p class="metric-value">48.2%</p>
+              <p class="metric-label">Out-of-pocket share of total health expenditure</p>
+              <p class="metric-source">National Health Accounts 2021</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">17.3%</p>
+              <p class="metric-label">Households facing catastrophic health expenditure</p>
+              <p class="metric-source">NSSO 75th Round, 2018</p>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-value">6.3 Cr</p>
+              <p class="metric-label">People pushed into poverty by health costs each year</p>
+              <p class="metric-source">Selvaraj et al., 2018</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide theme-synthesis"
+        id="synthesis"
+        data-label="Synthesis"
+        data-title="Efficiency improves only when all four lenses hold at once"
+        aria-hidden="true"
+      >
+        <div class="slide-shell">
+          <div class="slide-topline">
+            <span class="slide-number">06</span>
+            <p class="slide-kicker">Synthesis</p>
+          </div>
+
+          <div class="slide-heading">
+            <h2>Efficiency improves only when production, allocation, execution, and protection work together</h2>
+            <p>
+              Bigger budgets alone do not guarantee better outcomes. The public system has to use inputs well,
+              buy the right mix of care, keep funds intact through delivery, and prevent financial harm to
+              households.
+            </p>
+          </div>
+
+          <div class="summary-grid">
+            <article class="summary-card">
+              <p class="panel-label">Technical</p>
+              <h3>Use inputs without avoidable waste</h3>
+              <p class="summary-equation">TE = &theta;<sup>*</sup></p>
+              <p>Average TE remains around 0.55 across public PHCs.</p>
+            </article>
+
+            <article class="summary-card">
+              <p class="panel-label">Allocative</p>
+              <h3>Back the highest-value mix of care</h3>
+              <p class="summary-equation">MB<sub>i</sub> / c<sub>i</sub> = MB<sub>j</sub> / c<sub>j</sub></p>
+              <p>Primary care remains near 21 percent of government health spending.</p>
+            </article>
+
+            <article class="summary-card">
+              <p class="panel-label">Governance</p>
+              <h3>Keep public funds reaching patients</h3>
+              <p class="summary-equation">E<sub>eff</sub> = B (1 - &delta;)</p>
+              <p>Leakage and absenteeism reduce the effective value of each rupee.</p>
+            </article>
+
+            <article class="summary-card">
+              <p class="panel-label">Equity &amp; risk</p>
+              <h3>Protect households from forced private spending</h3>
+              <p class="summary-equation">CHE = 1 if OOP / C<sub>hh</sub> &gt; &kappa;</p>
+              <p>Out-of-pocket burden is still 48.2 percent of total health expenditure.</p>
+            </article>
+          </div>
+
+          <div class="closing-layout">
+            <article class="closing-card">
+              <p class="panel-label">Bottom line</p>
+              <h3>Efficiency is system quality under constraint</h3>
+              <p>
+                In India's public health sector, efficiency should be judged by whether the system turns scarce
+                resources into accessible, high-value, well-governed care without shifting risk onto households.
+              </p>
+            </article>
+
+            <article class="closing-card">
+              <p class="panel-label">Sources used</p>
+              <ul class="source-list">
+                <li>Farrell (1957); Leibenstein (1966)</li>
+                <li>National Health Policy 2017; National Health Accounts 2021</li>
+                <li>NHSRC 2022; NSSO 75th Round (2018); CAG NHM audit reporting</li>
+                <li>Banerjee &amp; Duflo (2006); Selvaraj et al. (2018); Das et al. (2022); Lim et al. (2010)</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
     </main>
+
+    <nav class="slide-dots" aria-label="Slide navigation">
+      <button class="slide-dot is-active" type="button" data-target="intro">
+        <span>01</span>
+        <strong>Intro</strong>
+      </button>
+      <button class="slide-dot" type="button" data-target="technical">
+        <span>02</span>
+        <strong>Technical</strong>
+      </button>
+      <button class="slide-dot" type="button" data-target="allocative">
+        <span>03</span>
+        <strong>Allocative</strong>
+      </button>
+      <button class="slide-dot" type="button" data-target="governance">
+        <span>04</span>
+        <strong>Governance</strong>
+      </button>
+      <button class="slide-dot" type="button" data-target="equity">
+        <span>05</span>
+        <strong>Equity</strong>
+      </button>
+      <button class="slide-dot" type="button" data-target="synthesis">
+        <span>06</span>
+        <strong>Synthesis</strong>
+      </button>
+    </nav>
+
+    <div class="sr-only" id="live-region" aria-live="polite"></div>
   </div>
 
   <script src="script.js"></script>
