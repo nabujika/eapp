@@ -128,7 +128,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.15rem;
+  padding: 0.8rem 1rem;
   border-radius: calc(var(--radius-lg) + 2px);
   background: rgba(7, 15, 29, 0.72);
   border: 1px solid rgba(180, 221, 255, 0.12);
@@ -274,6 +274,7 @@ button {
   z-index: 1;
   min-height: 0;
   margin-top: 1rem;
+  overflow: hidden;
 }
 
 .slide {
@@ -327,23 +328,17 @@ button {
 }
 
 .slide-shell {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: 1;
-  display: block;
-  height: 100%;
-  min-height: 0;
-  padding: clamp(1.25rem, 2vw, 1.8rem);
-  overflow: hidden;
-}
-
-.slide-content {
   display: grid;
-  gap: 1.25rem;
-  width: calc(100% / var(--fit-scale, 1));
-  min-height: 100%;
-  margin: 0 auto;
-  transform: scale(var(--fit-scale, 1));
-  transform-origin: top center;
+  gap: 0.95rem;
+  width: min(1500px, calc(100% - 1.5rem));
+  padding: clamp(1rem, 1.45vw, 1.45rem);
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(var(--fit-scale, 1));
+  transform-origin: center;
   transition: transform 220ms ease, width 220ms ease;
 }
 
@@ -382,7 +377,7 @@ button {
 }
 
 .intro-copy h1 {
-  font-size: clamp(2.8rem, 5vw, 5.4rem);
+  font-size: clamp(2.4rem, 4.4vw, 4.85rem);
   line-height: 0.94;
   max-width: 11ch;
 }
@@ -445,7 +440,7 @@ button {
 .metric-card,
 .summary-card,
 .closing-card {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 .nav-panel h3,
@@ -477,7 +472,7 @@ button {
 .metric-row,
 .summary-grid {
   display: grid;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .signal-grid {
@@ -543,14 +538,14 @@ button {
 }
 
 .slide-heading h2 {
-  font-size: clamp(2rem, 3vw, 3.55rem);
+  font-size: clamp(1.75rem, 2.5vw, 3rem);
   line-height: 1.04;
 }
 
 .slide-heading p {
-  margin-top: 0.85rem;
+  margin-top: 0.7rem;
   max-width: 62ch;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .slide-columns {
@@ -562,7 +557,7 @@ button {
 .figure-card {
   position: relative;
   overflow: hidden;
-  padding: 1.3rem;
+  padding: 1.05rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(190, 220, 255, 0.14);
 }
@@ -586,9 +581,9 @@ button {
 .equation-body {
   display: grid;
   gap: 0.38rem;
-  margin-top: 0.95rem;
+  margin-top: 0.8rem;
   font-family: "Consolas", "Cascadia Mono", monospace;
-  font-size: clamp(1rem, 1vw + 0.8rem, 1.45rem);
+  font-size: clamp(0.95rem, 0.9vw + 0.78rem, 1.28rem);
 }
 
 .equation-subhead {
@@ -598,8 +593,8 @@ button {
 }
 
 .equation-note {
-  margin-top: 1rem;
-  font-size: 0.98rem;
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
 }
 
 .card-header {
@@ -620,8 +615,8 @@ button {
 }
 
 .chart-frame {
-  margin-top: 1rem;
-  min-height: 20rem;
+  margin-top: 0.8rem;
+  min-height: 14.5rem;
 }
 
 .legend-grid {
@@ -663,9 +658,9 @@ button {
 }
 
 .figure-detail {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .detail-top {
@@ -721,23 +716,23 @@ button {
 }
 
 .metric-card {
-  padding: 1.15rem;
+  padding: 0.95rem;
 }
 
 .metric-value {
-  font-size: clamp(1.9rem, 2vw + 1rem, 3rem);
+  font-size: clamp(1.65rem, 1.7vw + 0.95rem, 2.6rem);
   font-weight: 800;
   line-height: 1;
   color: var(--accent);
 }
 
 .metric-label {
-  margin-top: 0.6rem;
+  margin-top: 0.45rem;
   font-weight: 700;
 }
 
 .metric-source {
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   font-size: 0.88rem;
 }
 
@@ -831,13 +826,13 @@ button {
 .risk-dashboard {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 0.62fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.85rem;
+  margin-top: 0.8rem;
 }
 
 .risk-visual {
   position: relative;
-  padding: 1.3rem;
+  padding: 1rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(173, 220, 255, 0.14);
   background:
@@ -880,7 +875,7 @@ button {
 .risk-note {
   position: relative;
   z-index: 1;
-  margin-top: 0.9rem;
+  margin-top: 0.7rem;
   max-width: 44ch;
   color: var(--text-soft);
 }
@@ -891,7 +886,7 @@ button {
 }
 
 .selector-chip {
-  padding: 0.9rem 1rem;
+  padding: 0.75rem 0.9rem;
   text-align: left;
   border-radius: var(--radius-md);
   font-weight: 700;
@@ -907,7 +902,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   color: var(--text-faint);
   font-size: 0.88rem;
   font-weight: 700;
@@ -950,19 +945,22 @@ button {
 }
 
 .slide-dots {
-  position: relative;
+  position: absolute;
+  top: calc(50% + 1.25rem);
+  right: 1rem;
   z-index: 4;
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.55rem;
+  transform: translateY(-50%);
 }
 
 .slide-dot {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.72rem 0.92rem;
+  min-width: 7rem;
+  padding: 0.62rem 0.82rem;
   border-radius: 999px;
   color: var(--text-soft);
 }
@@ -1099,10 +1097,6 @@ button {
 }
 
 @media (max-width: 860px) {
-  body {
-    overflow: auto;
-  }
-
   .deck-app {
     padding: 0.7rem;
   }
@@ -1122,12 +1116,16 @@ button {
   }
 
   .slide-shell {
-    padding: 1rem;
+    width: calc(100% - 1rem);
+    padding: 0.9rem;
   }
 
   .slide-dots {
+    position: static;
+    transform: none;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0.8rem;
   }
 }
 

@@ -493,46 +493,23 @@ function setupEquityDashboard() {
 
 function setupSlideAutoFit() {
   const shells = [...document.querySelectorAll(".slide-shell")];
+  const stage = document.getElementById("deck-stage");
   let frameId = 0;
 
-  shells.forEach((shell) => {
-    if (shell.querySelector(":scope > .slide-content")) return;
-
-    const content = document.createElement("div");
-    content.className = "slide-content";
-
-    while (shell.firstChild) {
-      content.appendChild(shell.firstChild);
-    }
-
-    shell.appendChild(content);
-  });
-
   function fitShell(shell) {
-    const content = shell.querySelector(".slide-content");
-    if (!content) return;
-
     shell.style.setProperty("--fit-scale", "1");
-    content.style.width = "";
 
-    const shellHeight = shell.clientHeight;
-    if (!shellHeight) return;
+    const viewport = shell.closest(".slide");
+    if (!viewport) return;
 
-    let scale = 1;
+    const availableWidth = Math.max(0, viewport.clientWidth - 16);
+    const availableHeight = Math.max(0, viewport.clientHeight - 16);
+    const naturalWidth = Math.ceil(shell.scrollWidth);
+    const naturalHeight = Math.ceil(shell.scrollHeight);
 
-    for (let iteration = 0; iteration < 3; iteration += 1) {
-      const naturalHeight = content.scrollHeight;
-      if (!naturalHeight) break;
+    if (!availableWidth || !availableHeight || !naturalWidth || !naturalHeight) return;
 
-      scale = Math.min(1, shellHeight / naturalHeight);
-      if (scale >= 0.999) {
-        scale = 1;
-        break;
-      }
-
-      shell.style.setProperty("--fit-scale", scale.toFixed(4));
-    }
-
+    const scale = Math.min(1, availableWidth / naturalWidth, availableHeight / naturalHeight);
     shell.style.setProperty("--fit-scale", scale.toFixed(4));
   }
 
@@ -550,6 +527,15 @@ function setupSlideAutoFit() {
 
   window.addEventListener("resize", scheduleSlideFit);
   window.addEventListener("load", scheduleSlideFit);
+
+  if (typeof ResizeObserver === "function") {
+    const observer = new ResizeObserver(() => {
+      scheduleSlideFit();
+    });
+
+    if (stage) observer.observe(stage);
+    shells.forEach((shell) => observer.observe(shell));
+  }
 
   scheduleSlideFit();
 }
@@ -587,8 +573,6 @@ function setupSlideDeck() {
 
       if (isActive) {
         slide.removeAttribute("inert");
-        const shell = slide.querySelector(".slide-shell");
-        if (shell) shell.scrollTop = 0;
       } else {
         slide.setAttribute("inert", "");
       }
