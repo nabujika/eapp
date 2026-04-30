@@ -188,6 +188,8 @@ const equityMetrics = [
   }
 ];
 
+let scheduleSlideFit = () => {};
+
 function clampPercent(value) {
   return Math.max(0, Math.min(100, value));
 }
@@ -229,6 +231,7 @@ function setFigureInteraction({ target, detailTargetId, data, renderDetail, init
     });
 
     detailTarget.innerHTML = renderDetail(data[nextIndex]);
+    scheduleSlideFit();
 
     if (onActivate) {
       onActivate(data[nextIndex], nextIndex, target);
@@ -475,6 +478,8 @@ function setupEquityDashboard() {
       footerLeft: metric.footerLeft,
       footerRight: metric.footerRight
     });
+
+    scheduleSlideFit();
   }
 
   buttons.forEach((button) => {
@@ -484,6 +489,69 @@ function setupEquityDashboard() {
   });
 
   activate(0);
+}
+
+function setupSlideAutoFit() {
+  const shells = [...document.querySelectorAll(".slide-shell")];
+  let frameId = 0;
+
+  shells.forEach((shell) => {
+    if (shell.querySelector(":scope > .slide-content")) return;
+
+    const content = document.createElement("div");
+    content.className = "slide-content";
+
+    while (shell.firstChild) {
+      content.appendChild(shell.firstChild);
+    }
+
+    shell.appendChild(content);
+  });
+
+  function fitShell(shell) {
+    const content = shell.querySelector(".slide-content");
+    if (!content) return;
+
+    shell.style.setProperty("--fit-scale", "1");
+    content.style.width = "";
+
+    const shellHeight = shell.clientHeight;
+    if (!shellHeight) return;
+
+    let scale = 1;
+
+    for (let iteration = 0; iteration < 3; iteration += 1) {
+      const naturalHeight = content.scrollHeight;
+      if (!naturalHeight) break;
+
+      scale = Math.min(1, shellHeight / naturalHeight);
+      if (scale >= 0.999) {
+        scale = 1;
+        break;
+      }
+
+      shell.style.setProperty("--fit-scale", scale.toFixed(4));
+    }
+
+    shell.style.setProperty("--fit-scale", scale.toFixed(4));
+  }
+
+  function fitAllSlides() {
+    shells.forEach((shell) => fitShell(shell));
+  }
+
+  scheduleSlideFit = () => {
+    if (frameId) cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(() => {
+      fitAllSlides();
+      frameId = 0;
+    });
+  };
+
+  window.addEventListener("resize", scheduleSlideFit);
+  window.addEventListener("load", scheduleSlideFit);
+
+  scheduleSlideFit();
 }
 
 function setupSlideDeck() {
@@ -544,6 +612,8 @@ function setupSlideDeck() {
     if (announce && liveRegion) {
       liveRegion.textContent = `Slide ${nextIndex + 1} of ${slides.length}: ${slides[nextIndex].dataset.label}`;
     }
+
+    scheduleSlideFit();
   }
 
   function moveBy(step) {
@@ -657,5 +727,6 @@ renderBarChart("governance-chart", governanceData, {
   initialIndex: 1
 });
 
+setupSlideAutoFit();
 setupEquityDashboard();
 setupSlideDeck();

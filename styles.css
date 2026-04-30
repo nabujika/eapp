@@ -329,24 +329,22 @@ button {
 .slide-shell {
   position: relative;
   z-index: 1;
-  display: grid;
-  gap: 1.25rem;
+  display: block;
   height: 100%;
   min-height: 0;
   padding: clamp(1.25rem, 2vw, 1.8rem);
-  overflow: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(111, 178, 255, 0.45) transparent;
+  overflow: hidden;
 }
 
-.slide-shell::-webkit-scrollbar {
-  width: 0.6rem;
-}
-
-.slide-shell::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(111, 178, 255, 0.32);
+.slide-content {
+  display: grid;
+  gap: 1.25rem;
+  width: calc(100% / var(--fit-scale, 1));
+  min-height: 100%;
+  margin: 0 auto;
+  transform: scale(var(--fit-scale, 1));
+  transform-origin: top center;
+  transition: transform 220ms ease, width 220ms ease;
 }
 
 .slide-topline {
